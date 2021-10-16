@@ -49,4 +49,21 @@ class StringCalculator {
             return integers;
         }
 
+    
+     private static List<char> FormatInputNumbers(ref string numbers)
+        {
+            var delimeters = new List<char>
+                             {
+                                 ',',
+                                 '\n'
+                             };
+
+            if (numbers[0] == '/' && numbers[1] == '/' && numbers[3] == '\n')
+            {
+                delimeters.Add(numbers[2]);
+                numbers = numbers.Remove(0,
+                                         3);
+            }
+            return delimeters;
+        }
 }
