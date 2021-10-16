@@ -40,4 +40,12 @@ class StringCalculatorShould {
             Assert.AreEqual(42,
                             result);
         }
+    
+    @Test
+     public void TestAddWithMultipleNumbersInStringUsingDifferentDelimeter(string inputNumbers)
+        {
+            int result = stringCalculator.Add(inputNumbers);
+            Assert.AreEqual(3,
+                            result);
+        }
 }
