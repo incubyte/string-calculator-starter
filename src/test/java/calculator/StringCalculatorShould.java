@@ -33,4 +33,11 @@ class StringCalculatorShould {
             Assert.AreEqual(55,
                             result);
         }
+    @Test
+     public void TestAddWithMultipleNumbersInStringReturnZeroForEmptyNumbers(string inputNumbers)
+        {
+            int result = stringCalculator.Add(inputNumbers);
+            Assert.AreEqual(42,
+                            result);
+        }
 }
