@@ -66,4 +66,13 @@ class StringCalculator {
             }
             return delimeters;
         }
+    
+     private static void ValidateInputNumbers(string numbers)
+        {
+            if (numbers == null)
+            {
+                throw new ArgumentNullException("negative numbers ans zeros are not allowed");
+            }
+        }
+
 }
