@@ -17,4 +17,12 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    
+    @Test
+     public void TestAddWithMultipleNumbersInStringReturnsTheTotal(string inputNumbers)
+        {
+            int result = stringCalculator.Add(inputNumbers);
+            Assert.AreEqual(55,
+                            result);
+        }
 }
