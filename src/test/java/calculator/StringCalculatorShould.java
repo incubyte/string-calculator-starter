@@ -24,4 +24,11 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(3, stringCalculator.add("1,2"));
     }
+    
+    @Test
+    void string_with_unknown_amount_of_numbers()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(10, stringCalculator.add("2,4,3,1"));
+    }
 }
