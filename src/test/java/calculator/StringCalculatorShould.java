@@ -31,4 +31,11 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(10, stringCalculator.add("2,4,3,1"));
     }
+    
+    @Test
+    void string_with_new_line_delimiter()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
 }
