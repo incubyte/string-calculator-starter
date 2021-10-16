@@ -48,4 +48,13 @@ class StringCalculatorShould {
             Assert.AreEqual(3,
                             result);
         }
+    
+    
+     @Test
+      public void TestAddWithNegativeNumbersWillThrowException(string inputNumbers)
+        {
+            int result = stringCalculator.Add(inputNumbers);
+            Assert.AreEqual(3,
+                            result);
+        }
 }
