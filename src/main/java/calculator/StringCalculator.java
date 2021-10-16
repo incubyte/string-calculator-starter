@@ -8,9 +8,13 @@ class StringCalculator {
         return 0;
         }
     	else if (input.length()==1) {
-    		 int x =Integer.parseInt(input.);
+    		 int x =Integer.parseInt(input);
             return x ;
             } 
+    	else if (input.length()>=10) {
+   		 
+           return 0 ;
+           }
     	else {
     		for(i=0;i<input.length();i+2) {
     			int x =Integer.parseInt(input.charAt(i));
