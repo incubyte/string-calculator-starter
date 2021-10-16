@@ -1,7 +1,7 @@
 package calculator;
 
 class StringCalculator {
-	private String delimiter=",";
+	private String delimiter=",|\n";
 
     public int add(String input) {
         if(isStringEmpty(input))
