@@ -16,5 +16,37 @@ class StringCalculator {
 
             return total;
         }
+    
+     private static IEnumerable<int> ConvertStringToIntegers(string numbers)
+        {
+            var integers = new List<int>();
+
+            if (numbers.Trim()
+                       .Length == 0)
+            {
+                integers.Add(0);
+            }
+            else
+            {
+                var delimeters = FormatInputNumbers(ref numbers);
+
+
+                integers = numbers.Split(delimeters.ToArray())
+                                  .Where(x => x.Length > 0)
+                                  .Select(x => Convert.ToInt32(x))
+                                  .ToList();
+
+                var negativeNumbers = integers.Where(x => x < 0)
+                                              .ToList();
+                if (negativeNumbers.Any())
+                {
+                    throw new ArgumentException(string.Format("negatives {0} not allowed",
+                                                              string.Join(",",
+                                                                          negativeNumbers)));
+                }
+            }
+
+            return integers;
+        }
 
 }
