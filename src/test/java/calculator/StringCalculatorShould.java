@@ -38,4 +38,18 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(6, stringCalculator.add("1\n2,3"));
     }
+    
+    @Test
+    void string_with_custom_delimiter()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
+    
+    @Test
+    void string_with_custom_delimiter_1()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(8, stringCalculator.add("//x\\n2x1x5"));
+    }
 }
