@@ -25,4 +25,12 @@ class StringCalculatorShould {
             Assert.AreEqual(55,
                             result);
         }
+    
+    @Test
+     public void TestAddWithMultipleNumbersInStringSplitWithNewLinesAndCommasReturnsTheTotal(string inputNumbers)
+        {
+            int result = stringCalculator.Add(inputNumbers);
+            Assert.AreEqual(55,
+                            result);
+        }
 }
