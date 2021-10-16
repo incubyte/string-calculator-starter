@@ -9,6 +9,9 @@ class StringCalculator {
         }
     	else if (input.length()==1) {
     		 int x =Integer.parseInt(input);
+    		 if(x<0) {
+    			 throw new exception("Negative number not allowed")
+    		 }
             return x ;
             } 
     	else if (input.length()>=10) {
@@ -18,6 +21,9 @@ class StringCalculator {
     	else {
     		for(i=0;i<input.length();i+2) {
     			int x =Integer.parseInt(input.charAt(i));
+    			if(x<0) {
+       			 throw new exception("Negative number not allowed")
+       		 }
     			sum=sum+x;
     		}
     		return sum;
