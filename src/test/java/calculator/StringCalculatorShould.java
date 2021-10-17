@@ -27,4 +27,12 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(stringCalculator.add("1,2"), 3);
 	}
+    
+    @Test
+	public void twoNumbersNewLineReturnSum() throws Exception
+	{
+    	StringCalculator stringCalculator = new StringCalculator();
+
+		assertEquals(stringCalculator.add("1\n2"), 3);
+	}
 }
