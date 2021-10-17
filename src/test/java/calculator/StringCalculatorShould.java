@@ -67,6 +67,21 @@ class StringCalculatorShould {
     	}
     } 
     
+    @Test
+    void avoid_negative_value_multiple()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	try 
+    	{
+    		stringCalculator.add("-1,6,-8,-7");
+    	}catch(RuntimeException e) 
+    	{
+    		assertEquals("Negative not allow[-1, -8, -7]", e.getMessage());
+    	}
+    } 
+    
+    
+    
     
 
 }
