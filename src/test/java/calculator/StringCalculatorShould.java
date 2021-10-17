@@ -31,9 +31,13 @@ class StringCalculatorShould {
     }
     
     @Test
-    void string_with_three_number_and_delimiter_should_return_addition_as_int() {				
+    void string_with_three_number_and_delimitercomma_should_return_addition_as_int() {				
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(6, stringCalculator.add("1,2,3")); 	//5 test case added
     }
-    
+    @Test
+    void string_with_three_number_and_delimiter_should_return_addition_as_int() {				
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1\n2\n3")); 	//5 test case variant
+    }
 }	
