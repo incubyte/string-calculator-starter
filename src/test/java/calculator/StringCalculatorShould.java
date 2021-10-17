@@ -39,7 +39,13 @@ class StringCalculatorShould {
     @Test
     void string_with_multiple_number_separated_by_commas_and_support_different_delimiters_should_return_addition_of_number() {
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(6, stringCalculator.add("//;\n1;2,3"));
+        assertEquals(3, stringCalculator.add("//;\n1;2"));
+    }
+    
+    @Test
+    void string_with_multiple_number_separated_by_commas_and_support_different_delimiters_as_special_charactors_should_return_addition_of_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//$\n1$2,3"));
     }
     
 }
