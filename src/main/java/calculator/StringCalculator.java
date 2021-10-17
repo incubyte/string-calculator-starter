@@ -1,12 +1,17 @@
 package calculator;
 
 class StringCalculator {
+	private String delimiter;
+
+	public StringCalculator() {
+		delimiter = ",|\n";
+	}
 
 	public int add(String input) throws Exception {
 		if (input.isEmpty()) {
 			return 0;
 		}
-		String[] str = input.split(",|\n");
+		String[] str = getStringArray(input);
 		// negative value check
 		checkNegative(str);
 		if (str.length == 1) {
@@ -50,5 +55,10 @@ class StringCalculator {
 		} else if (count > 1) {
 			throw new Exception(negNum); // multiple negative values
 		}
+	}
+
+	// get only numbers contain String array
+	private String[] getStringArray(String inputString) {
+		return inputString.split(delimiter);
 	}
 }
