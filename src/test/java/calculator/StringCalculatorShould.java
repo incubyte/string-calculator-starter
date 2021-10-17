@@ -22,9 +22,13 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("1,2"));
     }
+    @Test
     void string_add_unknown_amount_of_number() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(15, stringCalculator.add("1,2,3,4,5"));
     }
-
+    void string_add_with_new_line_between_two_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
 }
