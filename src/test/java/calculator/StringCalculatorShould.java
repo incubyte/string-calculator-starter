@@ -27,6 +27,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(6,stringCalculator.add("1,2,3"));
     }
-
+    @Test
+    public void shouldAllowNewLineAsDelimiter() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6,stringCalculator.add("1\n2,3"));
+    }
 
 }
