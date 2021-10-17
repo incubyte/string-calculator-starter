@@ -48,4 +48,13 @@ class StringCalculatorShould {
         assertEquals(6, stringCalculator.add("//$\n1$2,3"));
     }
     
+    @Test
+    void negative_values_are_not_allowed() {
+        StringCalculator stringCalculator = new StringCalculator();
+        try {
+        	stringCalculator.add("//$\n1$-2,3");
+        	} catch (RuntimeException ex) {
+        		assertEquals("negatives not allowed -2", ex.getMessage());
+        	} 
+    }
 }
