@@ -91,5 +91,11 @@ class StringCalculatorShould {
     }
     
     
+    @Test
+    void number_bigger_than_thousand_ignore()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(2, stringCalculator.add("1001,2"));
+    }
 
 }
