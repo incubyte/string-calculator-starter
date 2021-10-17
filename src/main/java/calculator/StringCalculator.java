@@ -9,7 +9,7 @@ class StringCalculator {
     		if( input.length() == 1 && Character.isDigit( input.charAt(0) ) )
     			return Integer.parseInt(input);
     		
-    		String[] numbers = input.split(",");
+    		String[] numbers = input.split(",|\n");
     		
     		int sum = 0;
     		for( String num : numbers ) 
