@@ -102,7 +102,7 @@ class StringCalculatorShould {
     void any_length_delimiter()
     {
     	StringCalculator stringCalculator = new StringCalculator();
-    	assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+    	assertEquals(6, stringCalculator.add("//[;;;]\n1;;;2;;;3"));
     }
 
 }

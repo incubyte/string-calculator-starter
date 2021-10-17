@@ -85,7 +85,15 @@ class StringCalculator {
     public int parseCustomDelimiterAndCalculate(String input)
 
     {
-    	delimiter = String.valueOf(input.charAt(2));
+    	if(input.charAt(2)=='[')
+    	{
+    		int startDelimiter = input.indexOf('[')+1;
+        	int endDelimiter = input.indexOf(']');
+        	delimiter = input.substring(startDelimiter, endDelimiter);
+    	}else
+    		delimiter = String.valueOf(input.charAt(2));
+    	
+    		
     	int newLineIndex = input.indexOf("\n");
     	numbersAndDelimeter = input.substring(newLineIndex + 1);
     	return calculate(splitByDelimiter(numbersAndDelimeter));
