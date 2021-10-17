@@ -37,6 +37,12 @@ class StringCalculatorShould {
     }
     
     @Test
+    void string_with_numbers_bigger_than_1000_should_ignore_them() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(1000, stringCalculator.add("1,1002,999,1005"));
+    }
+    
+    @Test
     void string_with_negative_numbers_should_throw_exception() {
         StringCalculator stringCalculator = new StringCalculator();
         try {
