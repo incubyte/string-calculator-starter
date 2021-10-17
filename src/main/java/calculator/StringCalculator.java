@@ -6,7 +6,13 @@ class StringCalculator {
     	if (input.isEmpty()) {
 			return 0;
 		}
-    	return -1;
+    	return toInt(input);
     }
+    
+    
+ // parse string to integer
+ 	private int toInt(String str) {
+ 		return Integer.parseInt(str);
+ 	}
 
 }
