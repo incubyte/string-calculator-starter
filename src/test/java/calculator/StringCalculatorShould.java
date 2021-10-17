@@ -26,7 +26,12 @@ class StringCalculatorShould {
 	}
 
 	@Test
-	void string_with_two_numbers_should_return_sum_of_numbers(){
+	void string_with_two_numbers_should_return_sum_of_numbers() {
 		assertEquals(3, stringCalculator.add("1,2"));
+	}
+
+	@Test
+	void string_with_three_or_more_numbers_should_return_sum_of_all_numbers() {
+		assertEquals(6, stringCalculator.add("1,2,3"));
 	}
 }

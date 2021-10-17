@@ -9,9 +9,9 @@ class StringCalculator {
 		String[] str = input.split(",");
 
 		if (str.length == 1) {
-			return toInt(input);
+			return toInt(str[0]);
 		}
-		return getNumbersSum(str[0], str[1]);
+		return getNumbersSum(str);
 	}
 
 	// parse string to integer
@@ -20,8 +20,12 @@ class StringCalculator {
 	}
 
 	// get sum of numbers
-	private int getNumbersSum(String str1, String str2) {
-		return toInt(str1) + toInt(str2);
+	private int getNumbersSum(String[] numbers) {
+		int sum = 0;
+		for (String num : numbers) {
+			sum += toInt(num);
+		}
+		return sum;
 
 	}
 }
