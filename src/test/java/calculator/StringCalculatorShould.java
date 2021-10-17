@@ -78,9 +78,17 @@ class StringCalculatorShould {
     	{
     		assertEquals("Negative not allow[-1, -8, -7]", e.getMessage());
     	}
+    	
     } 
     
-    
+    @Test 
+    void check_get_called_count()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	stringCalculator.add("1,2");
+    	int callCount = stringCalculator.getCalledCount();
+    	assertEquals(1, callCount);
+    }
     
     
 

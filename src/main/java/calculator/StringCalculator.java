@@ -6,10 +6,18 @@ class StringCalculator {
 	private String delimiter=",|\n";
 	private String numbersAndDelimeter;
 	ArrayList<Integer> intarr = new ArrayList<>();
+	private int calledCount;
 
+	public StringCalculator()
+	{
+		this.calledCount=0;
+	}
+    public int getCalledCount() {
+		return calledCount;
+	}
 
-    public int add(String input) throws RuntimeException {
-    	
+	public int add(String input) throws RuntimeException {
+    	calledCount++;
     	if(!isStringEmpty(input))
     	{
     		
