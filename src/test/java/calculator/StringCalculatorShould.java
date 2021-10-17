@@ -1,8 +1,11 @@
 package calculator;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.rmi.UnexpectedException;
 
 class StringCalculatorShould {
 
@@ -105,11 +108,15 @@ class StringCalculatorShould {
     	assertEquals(6, stringCalculator.add("//[;;;]\n1;;;2;;;3"));
     }
     
+    
     @Test
     void allow_multiple_delimiter()
     {
     	StringCalculator stringCalculator = new StringCalculator();
-    	assertEquals(6, stringCalculator.add("//[;][%]\n1;2%3"));
+    	assertThrows(NumberFormatException.class, ()->{
+    		assertEquals(6, stringCalculator.add("//[y][x]\n1y2x3"));
+    	});
+    	
     }
 
 }

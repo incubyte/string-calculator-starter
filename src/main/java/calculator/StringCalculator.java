@@ -85,7 +85,20 @@ class StringCalculator {
     public int parseCustomDelimiterAndCalculate(String input)
 
     {
-    	if(input.charAt(2)=='[')
+    	if(numberOfDelimiter(input)>1)
+    	{
+    		//StringBuilder sbinput = new StringBuilder(input);
+    		//sbinput.replace(2, 2,"");
+    		input.replace("][", "|");
+    		//input.replace('[', ' ');
+    		//input.replace(']',' ');
+    		//input.replaceAll("//s", "");
+    		int startDelimiter = input.indexOf('[')+1;
+        	int endDelimiter = input.indexOf(']');
+        	delimiter = input.substring(startDelimiter, endDelimiter);
+    		
+    	
+    	}else if(input.charAt(2)=='[')
     	{
     		int startDelimiter = input.indexOf('[')+1;
         	int endDelimiter = input.indexOf(']');
@@ -97,6 +110,19 @@ class StringCalculator {
     	int newLineIndex = input.indexOf("\n");
     	numbersAndDelimeter = input.substring(newLineIndex + 1);
     	return calculate(splitByDelimiter(numbersAndDelimeter));
+    }
+    
+    public int numberOfDelimiter(String input)
+    {
+    	int count=0;
+    	for(int i=0;i<input.length();i++)
+    	{
+    		if(input.charAt(i)=='[')
+    		{
+    			count++;
+    		}
+    	}
+    	return count;
     }
     public void negativeNumberExpection(String input)
     {
@@ -125,4 +151,6 @@ class StringCalculator {
     		return false;
     	
     }
+    
+
 }
