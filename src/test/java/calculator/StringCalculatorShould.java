@@ -43,6 +43,20 @@ class StringCalculatorShould {
     	 }
     	 
      }
+     
+     @Test
+    	      
+    	        public void add_negative_throws()
+    	        {
+    	           try {
+    	        	   StringCalculator stringCalculator = new StringCalculator();
+    	             	assertEquals(1, stringCalculator.add("1,-2"));
+    	             	assertEquals(1, stringCalculator.add("1,-2,-3"));
+    	           }catch(Exception e) {
+    	        	      e.printStackTrace();
+    	           }
+    	        }
+     
     }
     
      
