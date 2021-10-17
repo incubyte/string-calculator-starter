@@ -53,5 +53,10 @@ class StringCalculatorShould {
         assertEquals(6, stringCalculator.add("//[*][%]\\n1*2%3"));
     }
 
-    
+    @Test
+    void multiple_delimiters_with_length_longer_than_one_char() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[**][%%]\\n1**2%%3"));
+    }
+
 }
