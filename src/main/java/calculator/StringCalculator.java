@@ -20,13 +20,19 @@ class StringCalculator {
     }
 
     
-    public static int addMultipleNumberSaparatedByComma(String input, String separator) {
+    public static int addMultipleNumberSaparatedByComma(String input, String seperator) {
     	int total_sum = 0;
-    	// Split String using separator i.e. ','
-    	String nums[] = input.split(separator + "|\n");
+    	// Split String using separator i.e. ',' and '\n'
+    	String nums[] = input.split(seperator + "|\n");
     	for(int i=0; i<=nums.length-1; i++) {
-    		// Convert String to integer and calculate total sum
-    		total_sum = total_sum + Integer.parseInt(nums[i]);
+    		if (Integer.parseInt(nums[i]) < 0) {
+    			// raise exception, if number is less than 0
+    			throw new RuntimeException("negatives not allowed "+nums[i]);
+    		}
+    		else {
+    			// Convert String to integer and calculate total sum
+    			total_sum = total_sum + Integer.parseInt(nums[i]);
+    		}
     	}
     	return total_sum;
     }
