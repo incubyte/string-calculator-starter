@@ -37,10 +37,11 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("//;\\n1;2"));
     }
-//    @Test
-//    void string_throw_Exception_for_negative_number() {
-//        StringCalculator stringCalculator = new StringCalculator();
-//         stringCalculator.add("1,-2");
-//    }
+    @Test
+    void string_add_with_number_bigger_than_1000_ignored() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(2, stringCalculator.add("2+1001"));
+    }
+
 
 }
