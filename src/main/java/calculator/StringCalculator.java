@@ -1,14 +1,17 @@
 package calculator;
 
-
 class StringCalculator {
+	private static int addCalledCount;
 	private String delimiter;
-
+	static {
+		addCalledCount=0;
+	}
 	public StringCalculator() {
 		delimiter = ",|\n";
 	}
 
 	public int add(String input) throws Exception {
+		addCalledCount++;
 		if (input.isEmpty()) {
 			return 0;
 		}
@@ -42,12 +45,17 @@ class StringCalculator {
 	// negative value check
 	private void checkNegative(String[] numbers) throws Exception {
 		int count = 0;
-		String negNum = " ";
+		String negNum = "";
 		// check negative number
 		for (String num : numbers) {
 			if (toInt(num) < 0) {
 				count++;
-				negNum += " " + num;
+				if (negNum == "") {
+					negNum = num;
+				} else {
+					negNum += " " + num;
+				}
+
 			}
 		}
 		// if one negative value present then throw exception
@@ -68,24 +76,28 @@ class StringCalculator {
 		return inputString.split(delimiter);
 
 	}
-	
-	//set custom delimiter
+
+	// set custom delimiter
 	private void setCustomDelimiter(String strDel) {
 		if (strDel.startsWith("//[")) {
 			String delimiters = strDel.substring(2, strDel.length());
-			String del ="";
-			for(int i=0;i<delimiters.length();i++) {
-				if(delimiters.charAt(i)=='[') {
-					del="";
-				}else if(delimiters.charAt(i)==']') {
-					delimiter+="|"+del;
-				}else {
-					del+="\\" + delimiters.charAt(i);
+			String del = "";
+			for (int i = 0; i < delimiters.length(); i++) {
+				if (delimiters.charAt(i) == '[') {
+					del = "";
+				} else if (delimiters.charAt(i) == ']') {
+					delimiter += "|" + del;
+				} else {
+					del += "\\" + delimiters.charAt(i);
 				}
 			}
 		} else {
 			delimiter += "|\\" + strDel.charAt(2);
 		}
 		return;
+	}
+	
+	public int GetCalledCount() {
+		return addCalledCount;
 	}
 }
