@@ -42,7 +42,15 @@ class StringCalculatorShould {
         assertEquals(6, stringCalculator.add("1\n2\n3")); 	//5 test case variant
     }
     
-   
+   /* @Test()
+    public void negativeInputReturnsException()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	Assertions.assertThrows(Exception.class,new StringCalculator());
+    	
+    	stringCalculator.add("-1");
+    }		//7 test case
+    */
     @Test
     public void ignores_numbers_greater_than_thousand() {
     	StringCalculator stringCalculator = new StringCalculator();
