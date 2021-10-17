@@ -65,4 +65,9 @@ class StringCalculatorShould {
 	void string_custom_different_many_delimiter_and_sum_numbers() throws Exception {
 		assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
 	}
+	
+	@Test
+	void string_custom_differents_many_delimiters_and_sum_numbers() throws Exception {
+		assertEquals(6, stringCalculator.add("//[**][%%]\n1**2%%3"));
+	}
 }

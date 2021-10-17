@@ -1,6 +1,5 @@
 package calculator;
 
-import java.util.Arrays;
 
 class StringCalculator {
 	private String delimiter;
@@ -63,26 +62,30 @@ class StringCalculator {
 	private String[] getStringArray(String inputString) {
 		if (inputString.startsWith("//")) {
 			String[] combeStr = inputString.split("\n");
-			if (combeStr[0].startsWith("//[")) {
-				String delimiters = combeStr[0].substring(2, combeStr[0].length());
-				String del ="";
-				for(int i=0;i<delimiters.length();i++) {
-					if(delimiters.charAt(i)=='[') {
-						del="";
-					}else if(delimiters.charAt(i)==']') {
-						delimiter+="|"+del;
-					}else {
-						del+="\\" + delimiters.charAt(i);
-					}
-				}
-			} else {
-				delimiter += "|\\" + combeStr[0].charAt(2);
-			}
-			System.out.println(delimiter);
-			System.out.println(Arrays.toString(combeStr[1].split(delimiter)));
+			setCustomDelimiter(combeStr[0]);
 			return combeStr[1].split(delimiter);
 		}
 		return inputString.split(delimiter);
 
+	}
+	
+	//set custom delimiter
+	private void setCustomDelimiter(String strDel) {
+		if (strDel.startsWith("//[")) {
+			String delimiters = strDel.substring(2, strDel.length());
+			String del ="";
+			for(int i=0;i<delimiters.length();i++) {
+				if(delimiters.charAt(i)=='[') {
+					del="";
+				}else if(delimiters.charAt(i)==']') {
+					delimiter+="|"+del;
+				}else {
+					del+="\\" + delimiters.charAt(i);
+				}
+			}
+		} else {
+			delimiter += "|\\" + strDel.charAt(2);
+		}
+		return;
 	}
 }
