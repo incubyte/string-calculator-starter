@@ -1,45 +1,20 @@
 package calculator;
 
-import java.util.regex.Pattern;
-
 class StringCalculator {
 
-	private  String delimiter = "/|,|\\\\|n|;";
+	private final String delimiter = "/|,|\n";
     public int add(String input) {
-    	String[] numbers = input.split(" ");
+    	String[] numbers = input.split(",|\n");
     	
-    	
-    	if(input.isEmpty())
+    	if(isEmpty(input))
     	{
     		return 0;
     	}
-    	else if(input.length()==1) {
-    		return Integer.parseInt(input);
+    	if(input.length()==1) {
+    		return stringToInt(input);
     	}
-    	 if (input.charAt(0) == '/' && input.charAt(1) == '/'){
-             String delimiters = input.split("\n")[0];
-                String secondDelimiter = null;
-                //Find delimiter
-                delimiter = delimiters.substring(3, input.indexOf("]"));
-                delimiters = delimiters.substring(input.indexOf("]") + 1);
-                // Multiple delimiter
-                input = input.substring(input.indexOf("\n") + 1);
-                // Next delimiter
-                if (delimiters.charAt(0) == '[')
-                    secondDelimiter = delimiters.substring(1, delimiters.length() - 1);
-
-                if (secondDelimiter != null)
-                    input = input.replaceAll(Pattern.quote(secondDelimiter), delimiter);
-               delimiter = Pattern.quote(delimiter);
-           }
-     
-     input = input.replaceAll("\n",delimiter); 
-            //Split the elements by delimiter
-               numbers = input.split(delimiter);
-			return 0;  
-           
     	
-    	/*else {
+    	else {
     		
     		return getsum(numbers[0] , numbers[1]);
     	}
@@ -56,6 +31,5 @@ class StringCalculator {
     }
     private int stringToInt(String input) {
     	return Integer.parseInt(input);
-    }*/
-}
+    }
 }
