@@ -23,4 +23,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(7, stringCalculator.add("2,5"));
     }
+    
+    @Test
+    void handle_an_unknown_amount_of_numbers_separated_by_commas_should_return_addition_of_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(30, stringCalculator.add("4,2,5,10,4,5"));
+    }
 }
