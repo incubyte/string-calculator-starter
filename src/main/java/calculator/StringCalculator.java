@@ -2,6 +2,7 @@ package calculator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @SuppressWarnings("serial")
 class NegativeNumbersException extends RuntimeException{
@@ -45,7 +46,15 @@ class StringCalculator {
 
 	private List<Integer> getNumbersFromString(String input) {
 		
-		String [] stringNumbers = input.split(",|\n");
+		String delm = ",|\n";
+		
+		if( input.startsWith("//") ) {
+			delm = Pattern.quote( String.valueOf( input.charAt( 2 ) ) );
+			String [] parts = input.split("\n");
+			input = parts[1];
+		}
+		
+		String [] stringNumbers = input.split(delm);
 		List<Integer> numbers = new ArrayList<Integer>();
 		
 		for(String number : stringNumbers )

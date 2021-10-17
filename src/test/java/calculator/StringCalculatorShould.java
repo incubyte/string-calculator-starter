@@ -55,4 +55,11 @@ class StringCalculatorShould {
         	assertEquals("Negatives Not Allowed :-2-4",ex.getMessage());
         }
     }
+    
+    @Test
+    void string_with_custom_delimeter_as_number_seperator_should_return_sum() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(15, stringCalculator.add("//;\n1;2;3;4;5"));
+        assertEquals(15, stringCalculator.add("//.\n1.2.3.4.5"));
+    }
 }
