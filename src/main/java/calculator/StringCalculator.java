@@ -17,7 +17,7 @@ class StringCalculator {
     
     public static int addMultipleNumberSaparatedByComma(String input, String separator) {
     	int total_sum = 0;
-    	// Split String using separator
+    	// Split String using separator i.e. ','
     	String nums[] = input.split(separator);
     	for(int i=0; i<=nums.length-1; i++) {
     		// Convert String to integer and calculate total sum
