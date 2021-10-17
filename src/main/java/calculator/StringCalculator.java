@@ -2,6 +2,7 @@ package calculator;
 
 class StringCalculator {
 
+	private final String delimiter = ",|\n";
     public int add(String input) {
     	String[] numbers = input.split(",|\n");
     	
