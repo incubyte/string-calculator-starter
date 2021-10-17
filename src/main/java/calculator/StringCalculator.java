@@ -2,7 +2,7 @@ package calculator;
 
 class StringCalculator {
     public int add(String input) {
-    	String [] numbers=input.split(",");
+    	String [] numbers=input.split(",|\n");
     	if(input.length()==1)			
     		return input.length();			//To return number as int 
     	else if(input.length()>1)
