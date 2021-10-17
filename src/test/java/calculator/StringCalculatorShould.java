@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.rmi.UnexpectedException;
+import java.util.regex.PatternSyntaxException;
 
 class StringCalculatorShould {
 
@@ -117,6 +118,26 @@ class StringCalculatorShould {
     		assertEquals(6, stringCalculator.add("//[y][x]\n1y2x3"));
     	});
     	
+    }
+    
+    @Test
+    void check_multiple_delimiter_for_longer_char()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertThrows(NumberFormatException.class, ()->{
+    		assertEquals(6, stringCalculator.add("//[yy][xx]\n1yy2xx3"));
+
+    	});
+    }
+    
+    @Test
+    void check_multiple_delimiter_for_longer_char_1()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertThrows(PatternSyntaxException.class, ()->{
+    		assertEquals(6, stringCalculator.add("//[**][%%]\n1**2%%3"));
+
+    	});
     }
 
 }
