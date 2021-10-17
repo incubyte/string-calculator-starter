@@ -34,4 +34,9 @@ class StringCalculatorShould {
 	void string_with_three_or_more_numbers_should_return_sum_of_all_numbers() {
 		assertEquals(6, stringCalculator.add("1,2,3"));
 	}
+	
+	@Test
+	void string_with_diff_delimiter_three_or_more_numbers_should_return_sum_of_all_numbers() throws Exception {
+		assertEquals(6, stringCalculator.add("1\n2,3"));
+	}
 }

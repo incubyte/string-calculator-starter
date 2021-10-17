@@ -6,7 +6,7 @@ class StringCalculator {
 		if (input.isEmpty()) {
 			return 0;
 		}
-		String[] str = input.split(",");
+		String[] str = input.split(",|\n");
 
 		if (str.length == 1) {
 			return toInt(str[0]);
