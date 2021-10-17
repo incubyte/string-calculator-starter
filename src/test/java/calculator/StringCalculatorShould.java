@@ -45,4 +45,14 @@ class StringCalculatorShould {
         	assertEquals("Negatives Not Allowed :-2",ex.getMessage());
         }
     }
+    
+    @Test
+    void string_with_multiple_negative_numbers_should_throw_exception() {
+        StringCalculator stringCalculator = new StringCalculator();
+        try {
+        	stringCalculator.add("1,-2\n3,-4");
+        }catch(RuntimeException ex) {
+        	assertEquals("Negatives Not Allowed :-2-4",ex.getMessage());
+        }
+    }
 }
