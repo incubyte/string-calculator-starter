@@ -50,8 +50,8 @@ class StringCalculator {
 		String delm = ",|\n";
 		
 		if( input.startsWith("//") ) {
-			delm = Pattern.quote( String.valueOf( input.charAt( 2 ) ) );
 			String [] parts = input.split("\n");
+			delm = Pattern.quote( parts[0].substring(2) );
 			input = parts[1];
 		}
 		
