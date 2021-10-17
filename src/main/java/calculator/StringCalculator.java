@@ -64,13 +64,19 @@ class StringCalculator {
 		if (inputString.startsWith("//")) {
 			String[] combeStr = inputString.split("\n");
 			if (combeStr[0].startsWith("//[")) {
-				String delimiters = combeStr[0].substring(3, combeStr[0].length() - 1);
-				delimiter = "";
-				for (int i = 0; i < delimiters.length(); i++) {
-					delimiter += "\\" + delimiters.charAt(i);
+				String delimiters = combeStr[0].substring(2, combeStr[0].length());
+				String del ="";
+				for(int i=0;i<delimiters.length();i++) {
+					if(delimiters.charAt(i)=='[') {
+						del="";
+					}else if(delimiters.charAt(i)==']') {
+						delimiter+="|"+del;
+					}else {
+						del+="\\" + delimiters.charAt(i);
+					}
 				}
 			} else {
-				delimiter = "" + combeStr[0].charAt(2);
+				delimiter += "|\\" + combeStr[0].charAt(2);
 			}
 			System.out.println(delimiter);
 			System.out.println(Arrays.toString(combeStr[1].split(delimiter)));
