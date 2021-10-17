@@ -52,6 +52,7 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(8, stringCalculator.add("//x\n2x1x5"));
     }
+   
     
     @Test
     void avoid_negative_value()
@@ -60,10 +61,12 @@ class StringCalculatorShould {
     	try 
     	{
     		stringCalculator.add("-1");
-    	}catch(IllegalArgumentException e) 
+    	}catch(RuntimeException e) 
     	{
-    		assertEquals("negative not allowed -1", e.getMessage());
+    		assertEquals("Negative not allow[-1]", e.getMessage());
     	}
     } 
+    
+    
 
 }

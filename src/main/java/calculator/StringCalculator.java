@@ -1,23 +1,43 @@
 package calculator;
 
+import java.util.ArrayList;
+
 class StringCalculator {
 	private String delimiter=",|\n";
 	private String numbersAndDelimeter;
+	ArrayList<Integer> intarr = new ArrayList<>();
 
-    public int add(String input) {
-        if(isStringEmpty(input))
-        {
-        	return 0;
-        }else if(input.length()==1)
-        {
-        	return Integer.parseInt(input);
-        }else if(customDelimiterCheck(input))
-        {
-        	return parseCustomDelimiterAndCalculate(input);
-        }else
-        {
-        	return calculate(splitByDelimiter(input));
-        }
+
+    public int add(String input) throws RuntimeException {
+    	
+    	if(!isStringEmpty(input))
+    	{
+    		
+    		if(input.length()==1)
+            {
+            	return Integer.parseInt(input);
+            }
+    		if(customDelimiterCheck(input))
+            {
+    			System.out.print(parseCustomDelimiterAndCalculate(input));
+            	return parseCustomDelimiterAndCalculate(input);
+            }
+    		if(presentNegative(input))
+    		{
+    			negativeNumberExpection(input);
+    		}
+            
+            return calculate(splitByDelimiter(input));
+            
+    		
+    		
+    		
+    	}else 
+    	{
+    		return 0;
+    	}
+        
+        
         
     }
     
@@ -59,5 +79,32 @@ class StringCalculator {
     	int newLineIndex = input.indexOf("\n");
     	numbersAndDelimeter = input.substring(newLineIndex + 1);
     	return calculate(splitByDelimiter(numbersAndDelimeter));
+    }
+    public void negativeNumberExpection(String input)
+    {
+    	
+    	String rte = "Negative not allow"+intarr;
+    	if(presentNegative(input))
+    		throw new RuntimeException( rte );
+    	
+    	
+    }
+    
+    public boolean presentNegative(String input)
+    {
+    	String [] strarr = input.split(delimiter);
+    	for(String s : strarr)
+    	{
+    		int no = Integer.parseInt(s);
+    		if(no<0)
+    		{
+    			intarr.add(no);
+    		}
+    	}
+    	if(intarr.size()>0)
+    		return true;
+    	else
+    		return false;
+    	
     }
 }
