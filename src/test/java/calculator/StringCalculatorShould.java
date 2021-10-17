@@ -22,6 +22,11 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("1,2"));
     }
-    
+    @Test
+    public void shouldReturnSumOfAllNumbers() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6,stringCalculator.add("1,2,3"));
+    }
+
 
 }
