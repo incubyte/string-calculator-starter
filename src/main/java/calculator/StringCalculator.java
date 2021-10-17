@@ -61,7 +61,7 @@ class StringCalculator {
              //To handle negative value events
             for (int i = 0; i < str.length; i++) {           
               if(Integer.parseInt((str)[i])<0) {
-               throw new Exception();
+               throw new Exception("negatives not allowed");
               }
            
               
@@ -75,11 +75,11 @@ class StringCalculator {
            }
     	 }
              catch(Exception ex){
-            String errMsg = "negatives not allowed ";
-            System.out.println(errMsg);
+            
+            System.out.println(ex);
              for(int i=0;i<str.length;i++) {            
                           if (Integer.parseInt(str[i]) < 0) {
-                           errMsg += str[i] + " ";
+                           System.out.println(str[i]);
                           }
              }
              //This will print all the present negative values

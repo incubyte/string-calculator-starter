@@ -49,7 +49,7 @@ class StringCalculatorShould {
              {
     	           
     	        	   StringCalculator stringCalculator = new StringCalculator();
-    	             	assertEquals(1, stringCalculator.add("-1,2"));
+    	             	assertEquals(-1, stringCalculator.add("1,-2"));
     	             	
     	           
     	        }
@@ -68,7 +68,30 @@ class StringCalculatorShould {
           e.printStackTrace();
          }
      }
+     @Test
+     public void test10() {
+      try {
+      //Support Different Delimiters
+    	  StringCalculator stringCalculator = new StringCalculator();
+          
+      assertEquals(100, stringCalculator.add("//[***]\n1***2***3"));
+      }catch(Exception e) {
+          e.printStackTrace();
+         }
+     }
      
+        @Test
+        public void test11_12() {
+         try {
+          //For multiple delimiters
+        	 StringCalculator stringCalculator = new StringCalculator();
+             
+                assertEquals(6, stringCalculator.add("//[--][++]\n1--2++3"));
+                assertEquals(10, stringCalculator.add("//[***][##]\n5##2***3"));
+         }catch(Exception e) {
+          e.printStackTrace();
+         }
+        } 
     }
     
      
