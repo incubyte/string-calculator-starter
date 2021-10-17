@@ -50,8 +50,17 @@ class StringCalculator {
 		String delm = ",|\n";
 		
 		if( input.startsWith("//") ) {
+			
 			String [] parts = input.split("\n");
-			delm = Pattern.quote( parts[0].substring(2) );
+			String delimeters = parts[0].substring(2); 
+			
+			if( delimeters.length() > 1 && containsMultiDelimeters( delimeters ) ) {
+				for( int i = 0 ; i < delimeters.length() ; i++)
+					delm +=  "|" + Pattern.quote( String.valueOf( delimeters.charAt(i) ) );
+			}
+			else
+				delm = Pattern.quote( delimeters );
+			
 			input = parts[1];
 		}
 		
@@ -62,6 +71,16 @@ class StringCalculator {
 			numbers.add( Integer.parseInt( number ) );
 		
 		return numbers;
+	}
+
+	private boolean containsMultiDelimeters(String delimeters) {
+		char key = delimeters.charAt(0);
+		
+		for(int i = 0 ; i < delimeters.length() ; i++ )
+			if(key != delimeters.charAt(i))
+				return true;
+		
+		return false;
 	}
 
 }

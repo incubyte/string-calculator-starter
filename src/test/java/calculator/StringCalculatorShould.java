@@ -75,4 +75,10 @@ class StringCalculatorShould {
         assertEquals(15, stringCalculator.add("//;;;\n1;;;2;;;3;;;4;;;5"));
         assertEquals(15, stringCalculator.add("//..\n1..2..3..4..5"));
     }
+    
+    @Test
+    void string_with_multiple_delimeter_as_number_seperator_should_return_sum() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(15, stringCalculator.add("//;.\n1;2.3;4.5"));
+    }
 }
