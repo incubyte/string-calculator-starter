@@ -59,6 +59,13 @@ class StringCalculator {
 
 	// get only numbers contain String array
 	private String[] getStringArray(String inputString) {
-		return inputString.split(delimiter);
+		
+		if (inputString.charAt(0) == '/') {
+			String[] combeStr = inputString.split("\n");
+			delimiter += "|" + combeStr[0].charAt(2);
+			return combeStr[1].split(delimiter);
+		}
+			return inputString.split(delimiter);
+		
 	}
 }

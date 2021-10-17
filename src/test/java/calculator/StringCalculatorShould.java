@@ -50,4 +50,9 @@ class StringCalculatorShould {
 	void string_ignore_more_then_1000_and_sum_numbers() throws Exception {
 		assertEquals(6, stringCalculator.add("1\n2,3,1001"));
 	}
+	
+	@Test 
+	void string_custom_delimiter_and_sum_numbers() throws Exception {
+		assertEquals(3, stringCalculator.add("//;\n1;2"));
+	}
 }
