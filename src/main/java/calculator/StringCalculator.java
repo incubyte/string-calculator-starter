@@ -67,7 +67,9 @@ class StringCalculator {
     	int result=0;
     	for(String s : splitByDelimiter)
     	{
-    		result += Integer.parseInt(s);
+    		int no = Integer.parseInt(s);
+    		if(no<=1000)
+    			result += no;
     	}
     	return result;
     }
