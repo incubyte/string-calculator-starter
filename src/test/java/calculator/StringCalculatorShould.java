@@ -57,4 +57,10 @@ class StringCalculatorShould {
         		assertEquals("negatives not allowed -3", ex.getMessage());
         	} 
     }
+    
+    @Test
+    void numbers_bigger_than_1000_should_be_ignored() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(30, stringCalculator.add("10,20,1001"));
+    }
 }

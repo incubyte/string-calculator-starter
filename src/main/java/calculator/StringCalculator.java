@@ -28,6 +28,9 @@ class StringCalculator {
     		if (Integer.parseInt(nums[i]) < 0) {
     			// raise exception, if number is less than 0
     			throw new RuntimeException("negatives not allowed "+nums[i]);
+    		} else if(Integer.parseInt(nums[i]) > 1000) {
+    			// Ignore Addition, if number is bigger than 1000
+    			total_sum = total_sum + 0;
     		}
     		else {
     			// Convert String to integer and calculate total sum
