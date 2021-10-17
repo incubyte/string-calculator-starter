@@ -43,4 +43,10 @@ class StringCalculatorShould {
             stringCalculator.add("1,-2,3");
 
     }
+    @Test
+    public void Number_bigger_than_one_thousand_should_be_ignored() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(2,stringCalculator.add("2+1001"));
+    }
+
 }
