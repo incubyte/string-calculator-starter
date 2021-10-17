@@ -19,8 +19,8 @@ class StringCalculatorShould {
     }							//Test case passed
     
     @Test
-    void string_with_single_number_should_return_addition_as_int() {				
+    void string_with_two_number_should_return_addition_as_int() {				
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(1,2, stringCalculator.add("1,2")); //3 test case added
+        assertEquals(3, stringCalculator.add("1,2")); //3 test case added
     }	
 }	

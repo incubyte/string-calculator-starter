@@ -2,8 +2,13 @@ package calculator;
 
 class StringCalculator {
     public int add(String input) {
-    	if(input.length()>0)			
+    	String [] numbers=input.split(",");
+    	if(input.length()==1)			
     		return input.length();			//To return number as int 
+    	else if(input.length()>1)
+    	{
+    		return Integer.parseInt(numbers[0])+Integer.parseInt(numbers[1]);
+    	}									//Add two numbers
     	return 0;
         
         
