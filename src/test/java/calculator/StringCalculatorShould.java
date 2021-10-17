@@ -18,8 +18,10 @@ class StringCalculatorShould {
         assertEquals(1, stringCalculator.add("1"));
     }
     @Test
-    public void shouldReturnSumOfNumbersOnTwoStrings() {
+     void shouldReturnSumOfNumbersOnTwoStrings() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("1,2"));
     }
+    
+
 }
