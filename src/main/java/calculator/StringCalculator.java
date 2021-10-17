@@ -1,5 +1,5 @@
 package calculator;
-
+import java.util.ArrayList;
 class StringCalculator {
 
     public int add(String input) {
@@ -7,7 +7,11 @@ class StringCalculator {
         int size=in.length, sum=0;
         if(size==0)
             return sum;
-        return 0;
+        return Integer.parseInt(input);
+
     }
+
+
+
 
 }
