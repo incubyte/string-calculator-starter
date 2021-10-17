@@ -97,5 +97,12 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(2, stringCalculator.add("1001,2"));
     }
+    
+    @Test
+    void any_length_delimiter()
+    {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+    }
 
 }
