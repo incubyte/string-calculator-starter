@@ -29,4 +29,11 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(30, stringCalculator.add("4,2,5,10,4,5"));
     }
+    
+    @Test
+    void string_with_multiple_number_separated_by_commas_including_new_line_should_return_addition_of_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
+    
 }
