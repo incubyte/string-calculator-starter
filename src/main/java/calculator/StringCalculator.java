@@ -14,10 +14,15 @@ class StringCalculator {
     	}
     	
     	else {
-    		return Integer.parseInt(numbers[0] + Integer.parseInt(numbers[1]));
+    		
+    		return getsum(numbers[0] , numbers[1]);
     	}
     	
     		
+    }
+    
+    private int getsum(String numA,String numB) {
+    	return Integer.parseInt(numA) + Integer.parseInt(numB);
     }
     
     private boolean isEmpty(String input) {
