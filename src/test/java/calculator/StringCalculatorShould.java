@@ -45,4 +45,9 @@ class StringCalculatorShould {
 	void string_negative_value() throws Exception {
 		Assertions.assertThrows(Exception.class,()-> stringCalculator.add("-1"));
 	}
+	
+	@Test 
+	void string_ignore_more_then_1000_and_sum_numbers() throws Exception {
+		assertEquals(6, stringCalculator.add("1\n2,3,1001"));
+	}
 }

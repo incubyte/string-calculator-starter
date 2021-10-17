@@ -24,6 +24,9 @@ class StringCalculator {
 	private int getNumbersSum(String[] numbers) {
 		int sum = 0;
 		for (String num : numbers) {
+			if (toInt(num) > 1000) {
+				continue;
+			}
 			sum += toInt(num);
 		}
 		return sum;
