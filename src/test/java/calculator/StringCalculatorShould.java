@@ -1,11 +1,7 @@
 package calculator;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.rmi.UnexpectedException;
 import java.util.regex.PatternSyntaxException;
 
 class StringCalculatorShould {
@@ -57,7 +53,6 @@ class StringCalculatorShould {
     	assertEquals(8, stringCalculator.add("//x\n2x1x5"));
     }
    
-    
     @Test
     void avoid_negative_value()
     {
@@ -94,7 +89,6 @@ class StringCalculatorShould {
     	assertEquals(1, callCount);
     }
     
-    
     @Test
     void number_bigger_than_thousand_ignore()
     {
@@ -108,7 +102,6 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(6, stringCalculator.add("//[;;;]\n1;;;2;;;3"));
     }
-    
     
     @Test
     void allow_multiple_delimiter()

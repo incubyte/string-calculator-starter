@@ -36,17 +36,10 @@ class StringCalculator {
     		}
             
             return calculate(splitByDelimiter(input));
-            
-    		
-    		
-    		
     	}else 
     	{
     		return 0;
-    	}
-        
-        
-        
+    	}      
     }
     
     public boolean isStringEmpty(String input)
@@ -87,12 +80,7 @@ class StringCalculator {
     {
     	if(numberOfDelimiter(input)>1)
     	{
-    		//StringBuilder sbinput = new StringBuilder(input);
-    		//sbinput.replace(2, 2,"");
     		input.replace("][", "|");
-    		//input.replace('[', ' ');
-    		//input.replace(']',' ');
-    		//input.replaceAll("//s", "");
     		int startDelimiter = input.indexOf('[')+1;
         	int endDelimiter = input.indexOf(']');
         	delimiter = input.substring(startDelimiter, endDelimiter);
@@ -129,9 +117,7 @@ class StringCalculator {
     	
     	String rte = "Negative not allow"+intarr;
     	if(presentNegative(input))
-    		throw new RuntimeException( rte );
-    	
-    	
+    		throw new RuntimeException( rte );	
     }
     
     public boolean presentNegative(String input)
@@ -148,9 +134,6 @@ class StringCalculator {
     	if(intarr.size()>0)
     		return true;
     	else
-    		return false;
-    	
+    		return false;	
     }
-    
-
 }
