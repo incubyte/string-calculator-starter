@@ -16,5 +16,10 @@ class StringCalculatorShould {
     void string_with_single_number_should_return_number_as_int() {				
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
+<<<<<<< feature/PD1040_PriyaKotecha
     }							//Test case passed
 }	
+=======
+    }						//Test case passed
+}
+>>>>>>> 66b6a03 Second test case passed
