@@ -7,7 +7,7 @@ class StringCalculator {
     	if(input.isEmpty()) 
     		return 0;
     	
-    	// single number should return number as int
+    	// Single number should return number as integer
     	return Integer.parseInt(input);
     }
 
