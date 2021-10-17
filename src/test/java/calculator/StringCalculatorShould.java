@@ -1,5 +1,5 @@
 package calculator;
-
+import java.util.*;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 
@@ -45,17 +45,29 @@ class StringCalculatorShould {
      }
      
      @Test
-    	      
-    	        public void add_negative_throws()
-    	        {
-    	           try {
+      public void add_negative_throws()
+             {
+    	           
     	        	   StringCalculator stringCalculator = new StringCalculator();
-    	             	assertEquals(1, stringCalculator.add("1,-2"));
-    	             	assertEquals(1, stringCalculator.add("1,-2,-3"));
-    	           }catch(Exception e) {
-    	        	      e.printStackTrace();
-    	           }
+    	             	assertEquals(1, stringCalculator.add("-1,2"));
+    	             	
+    	           
     	        }
+     
+     @Test 
+     public void test7(){
+      try {
+      //Handling numbers greater than 1000
+    	  
+     StringCalculator stringCalculator = new StringCalculator();
+      
+      assertEquals(1, stringCalculator.add("1,-2,5050"));
+      assertEquals(3, stringCalculator.add("1,1001,2,2000"));
+      assertEquals(0, stringCalculator.add("9000"));
+      }catch(Exception e) {
+          e.printStackTrace();
+         }
+     }
      
     }
     

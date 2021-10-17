@@ -3,7 +3,8 @@ package calculator;
 import java.util.regex.Pattern;
 
 class StringCalculator {
-	String[] number;
+	String[] number ;
+	int sum = 0;
 	
      String delimiter = "/|,|\n";
     public int add(String input) {
@@ -53,21 +54,39 @@ class StringCalculator {
       }
 	return 0;
 }
-    public void negativeNumbersException(String input)
+    public int negativeNumbersException(String input)
     {
+    	String [] str = input.split(toString());
     	 try {
              //To handle negative value events
-            for (int i = 0; i < number.length; i++) {           
-              if(Integer.parseInt((number)[i])<0) {
+            for (int i = 0; i < str.length; i++) {           
+              if(Integer.parseInt((str)[i])<0) {
                throw new Exception();
               }
+           
+              
+        
+		if(Integer.parseInt(str[i])>1000) {
+             //Ignore if the number is greater than 1000
+             break;
             }
+            sum += Integer.parseInt(str[i]);
+            
+           }
     	 }
-              
-            	  
-              
-            catch(Exception e) {
-            	e.printStackTrace();
-            }
+             catch(Exception ex){
+            String errMsg = "negatives not allowed ";
+            System.out.println(errMsg);
+             for(int i=0;i<str.length;i++) {            
+                          if (Integer.parseInt(str[i]) < 0) {
+                           errMsg += str[i] + " ";
+                          }
+             }
+             //This will print all the present negative values
+             
+           }
+          
+          //The final sum value returned
+    return sum; 
     }
-}
+    }
