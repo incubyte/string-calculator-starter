@@ -17,4 +17,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    
+    @Test
+    void string_with_two_number_separated_by_commas_should_return_addition_of_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(7, stringCalculator.add("2,5"));
+    }
 }
