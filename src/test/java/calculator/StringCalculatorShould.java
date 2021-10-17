@@ -63,4 +63,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(30, stringCalculator.add("10,20,1001"));
     }
+    
+    @Test
+    void delimiters_can_be_of_any_length() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[??]\n1??2??3"));
+    }
 }
