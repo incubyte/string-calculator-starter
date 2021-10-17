@@ -1,8 +1,11 @@
 package calculator;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Assertions;
 
 class StringCalculatorShould {
 
@@ -28,8 +31,25 @@ class StringCalculatorShould {
      
      }
      void threeOrMoreDelimersReturnsSum() {
+    	 try {
     	 StringCalculator stringCalculator = new StringCalculator();
       	assertEquals(3, stringCalculator.add("//;\n1;2"));
-      
+      	assertEquals(6, stringCalculator.add("//;\n1:2:3"));
+      	assertEquals(10, stringCalculator.add("//';\n1'2'3'4"));
+      	assertEquals(3, stringCalculator.add("//;\n1 2"));
+    	 }
+    	 catch(Exception e) {
+    		 e.printStackTrace();
+    	 }
+    	 
      }
-}
+     
+    
+     
+
+
+     }
+     
+    
+      
+
