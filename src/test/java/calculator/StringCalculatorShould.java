@@ -22,4 +22,9 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(3, stringCalculator.add("1,2"));
     }
+     void twoNumbersNewLineDelimiterSum() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+     	assertEquals(3, stringCalculator.add("1\n2"));
+     
+     }
 }
