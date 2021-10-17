@@ -17,4 +17,9 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    
+    void twoNumbersCommalimitedRetrnSum() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(3, stringCalculator.add("1,2"));
+    }
 }
