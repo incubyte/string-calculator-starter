@@ -27,4 +27,9 @@ class StringCalculatorShould {
      	assertEquals(3, stringCalculator.add("1\n2"));
      
      }
+     void threeOrMoreDelimersReturnsSum() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+      	assertEquals(3, stringCalculator.add("//;\n1;2"));
+      
+     }
 }
