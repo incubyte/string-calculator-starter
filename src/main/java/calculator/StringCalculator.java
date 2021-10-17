@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.Arrays;
+
 class StringCalculator {
 	private String delimiter;
 
@@ -59,13 +61,22 @@ class StringCalculator {
 
 	// get only numbers contain String array
 	private String[] getStringArray(String inputString) {
-		
-		if (inputString.charAt(0) == '/') {
+		if (inputString.startsWith("//")) {
 			String[] combeStr = inputString.split("\n");
-			delimiter += "|" + combeStr[0].charAt(2);
+			if (combeStr[0].startsWith("//[")) {
+				String delimiters = combeStr[0].substring(3, combeStr[0].length() - 1);
+				delimiter = "";
+				for (int i = 0; i < delimiters.length(); i++) {
+					delimiter += "\\" + delimiters.charAt(i);
+				}
+			} else {
+				delimiter = "" + combeStr[0].charAt(2);
+			}
+			System.out.println(delimiter);
+			System.out.println(Arrays.toString(combeStr[1].split(delimiter)));
 			return combeStr[1].split(delimiter);
 		}
-			return inputString.split(delimiter);
-		
+		return inputString.split(delimiter);
+
 	}
 }

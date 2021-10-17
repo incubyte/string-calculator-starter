@@ -35,24 +35,29 @@ class StringCalculatorShould {
 	void string_with_three_or_more_numbers_should_return_sum_of_all_numbers() throws Exception {
 		assertEquals(6, stringCalculator.add("1,2,3"));
 	}
-	
+
 	@Test
 	void string_with_diff_delimiter_three_or_more_numbers_should_return_sum_of_all_numbers() throws Exception {
 		assertEquals(6, stringCalculator.add("1\n2,3"));
 	}
-	
-	@Test 
+
+	@Test
 	void string_negative_value() throws Exception {
-		Assertions.assertThrows(Exception.class,()-> stringCalculator.add("-1"));
+		Assertions.assertThrows(Exception.class, () -> stringCalculator.add("-1"));
 	}
-	
-	@Test 
+
+	@Test
 	void string_ignore_more_then_1000_and_sum_numbers() throws Exception {
 		assertEquals(6, stringCalculator.add("1\n2,3,1001"));
 	}
-	
-	@Test 
+
+	@Test
 	void string_custom_delimiter_and_sum_numbers() throws Exception {
-		assertEquals(3, stringCalculator.add("//;\n1;2"));
+		assertEquals(6, stringCalculator.add("//;\n1;5"));
+	}
+
+	@Test
+	void string_custom_many_delimiter_and_sum_numbers() throws Exception {
+		assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
 	}
 }
