@@ -1,8 +1,9 @@
 package calculator;
 
 class StringCalculator {
+	private final String delimiter=",|\n";
     public int add(String input) {
-    	String [] numbers=input.split(",|\n");
+    	String [] numbers=input.split(delimiter);
     	if(input.length()==1)			
     		return input.length();			//To return number as int 
     	else if(input.length()>1)
