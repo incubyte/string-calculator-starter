@@ -50,6 +50,6 @@ class StringCalculatorShould {
     void string_with_custom_delimiter_1()
     {
     	StringCalculator stringCalculator = new StringCalculator();
-    	assertEquals(8, stringCalculator.add("//x\\n2x1x5"));
+    	assertEquals(8, stringCalculator.add("//x\n2x1x5"));
     }
 }
