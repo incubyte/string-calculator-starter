@@ -3,10 +3,18 @@ package calculator;
 
 class StringCalculator {
 	private final String delimiter=",|\n";
-    public int add(String input) {
+    public int add(String input) throws Exception {
     	String [] numbers=input.split(delimiter);
-    	if(input.length()==1)			
-    		return input.length();			//To return number as int 
+    	if(input.length()==1)	
+    	{
+    		int x=Integer.parseInt(input);
+    		if(x<0)
+    		{
+    			 throw new Exception("Negative number not allowed");
+    		}
+    		return x;		
+    		
+    	}//To return number as int 
     	else if(input.length()>1)
     	{
     		try {
