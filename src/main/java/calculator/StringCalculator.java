@@ -9,13 +9,12 @@ class StringCalculator {
     		if( input.length() == 1 && Character.isDigit( input.charAt(0) ) )
     			return Integer.parseInt(input);
     		
-    		char[] numbers = input.toCharArray();
+    		String[] numbers = input.split(",");
     		
     		int sum = 0;
-    		for(Character c : numbers) {
-    			if( Character.isDigit(c) )
-    				sum += Integer.parseInt( String.valueOf(c) );
-    		}
+    		for( String num : numbers ) 
+    				sum += Integer.parseInt( num );
+    		
     		return sum;
     	}
         return 0;
