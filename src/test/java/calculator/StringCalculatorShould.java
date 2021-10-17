@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.Before;
+
 class StringCalculatorShould {
+	
+	private StringCalculator cal; //commit
+	//comment
+	@Before
+	public void init() {
+		cal = new StringCalculator();
+	}
 
     @Test
     void empty_string_should_return_0() {
