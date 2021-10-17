@@ -11,7 +11,7 @@ class StringCalculator {
 		if (str.length == 1) {
 			return toInt(input);
 		}
-		return -1;
+		return getNumbersSum(str[0], str[1]);
 	}
 
 	// parse string to integer
@@ -19,5 +19,9 @@ class StringCalculator {
 		return Integer.parseInt(str);
 	}
 
-	
+	// get sum of numbers
+	private int getNumbersSum(String str1, String str2) {
+		return toInt(str1) + toInt(str2);
+
+	}
 }

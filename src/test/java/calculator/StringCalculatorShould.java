@@ -25,5 +25,8 @@ class StringCalculatorShould {
 		assertEquals(1, stringCalculator.add("1"));
 	}
 
-	
+	@Test
+	void string_with_two_numbers_should_return_sum_of_numbers(){
+		assertEquals(3, stringCalculator.add("1,2"));
+	}
 }
