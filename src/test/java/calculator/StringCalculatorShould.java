@@ -17,4 +17,46 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
     }
+    @Test
+    void string_sum_with_two_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("1,2"));
+    }
+    @Test
+    void string_add_unknown_amount_of_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(15, stringCalculator.add("1,2,3,4,5"));
+    }
+    @Test
+    void string_add_with_new_line_between_two_number() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
+    @Test
+    void string_add_with_support_different_delimiters() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("//;\\n1;2"));
+    }
+    @Test
+    void string_add_with_number_bigger_than_1000_ignored() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(2, stringCalculator.add("2+1001"));
+    }
+    @Test
+    void string_delimiters_with_any_length() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[***]\\n1***2***3"));
+    }
+    @Test
+    void allow_multiple_delimiters() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[*][%]\\n1*2%3"));
+    }
+
+    @Test
+    void multiple_delimiters_with_length_longer_than_one_char() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(6, stringCalculator.add("//[**][%%]\\n1**2%%3"));
+    }
+
 }
