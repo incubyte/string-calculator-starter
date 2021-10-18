@@ -35,4 +35,11 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(54, stringCalculator.add("12\n 13, 14, 15 \n 16"));
     }
+
+    @Test
+    void string_with_multiple_numbers_and_user_defined_delimeter_should_return_number_as_int() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(54, stringCalculator.add("//;\n 12\n 13; 14; 15 \n 16"));
+    }
+
 }
