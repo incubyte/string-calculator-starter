@@ -4,7 +4,7 @@ configuration:
   scoring:
     command: ./gradlew test
   ide_config:
-    default_open_files:
+    default_open_files: 
       - ./src/main/java/calculator/StringCalculator.java
     project_menu:
       install: ./gradlew clean build
