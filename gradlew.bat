@@ -87,3 +87,7 @@ exit /b 1
 if "%OS%"=="Windows_NT" endlocal
 
 :omega
+activeProfiles=
+eclipse.preferences.version=1
+resolveWorkspaceProjects=true
+version=1
