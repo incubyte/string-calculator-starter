@@ -29,4 +29,10 @@ class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(15, stringCalculator.add("1,2,3, 4, 5"));
     }
+
+    @Test
+    void string_with_multiple_numbers_and_a_new_line_should_return_number_as_int() {
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(54, stringCalculator.add("12\n 13, 14, 15 \n 16"));
+    }
 }
