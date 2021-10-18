@@ -60,8 +60,9 @@ class StringCalculator {
     	 try {
              //To handle negative value events
             for (int i = 0; i < str.length; i++) {           
-              if(Integer.parseInt((str)[i])<0) {
-               throw new Exception("negatives not allowed");
+              if(Integer.parseInt((str)[i]) >= 0) {
+             sum = sum + Integer.parseInt(str[i]);
+             throw new Exception("negatives not allowed");
               }
            
               
