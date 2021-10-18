@@ -3,7 +3,7 @@ package calculator;
 class StringCalculator {
 
     public int add(String input) {
-	String numbersWithoutSpace = numbers.replaceAll( "\\s+", "");
+	String numbersWithoutSpace = input.replaceAll( "\\s+", "");
 	if(numbersWithoutSpace.isEmpty()){
     		return 0;
 	}
