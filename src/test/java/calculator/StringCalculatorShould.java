@@ -42,4 +42,15 @@ class StringCalculatorShould {
         assertEquals(54, stringCalculator.add("//;\n 12\n 13; 14; 15 \n 16"));
     }
 
+    @Test
+    void string_with_multiple_negative_numbers_and_user_defined_delimeter_should_throw_exception() {
+        StringCalculator stringCalculator = new StringCalculator();
+        try {
+            stringCalculator.add("//;\n 12\n -13; -14; 15 \n 16");    
+        } catch (Exception e) {
+            //TODO: handle exception
+            assertEquals("Negatives not allowed -13 -14 ", e.getMessage());
+        }        
+    }
+
 }
