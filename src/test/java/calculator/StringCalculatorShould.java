@@ -43,16 +43,25 @@ class StringCalculatorShould {
     }
     
   
+
+    @Test
+    public void ignores_numbers_greater_than_thousand() throws Exception{
+    	StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(20, stringCalculator.add("10,10,1001")); 	//6 test case 
+    }
+    
     @Test
     void string_with_negative_number_should_return_number_as_int() throws Exception{
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(-1, stringCalculator.add("-1"));
     }
     	//7 test case
-    
+  
     @Test
-    public void ignores_numbers_greater_than_thousand() throws Exception{
-    	StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(20, stringCalculator.add("10,10,1001")); 	//6 test case 
+    void string_with_three_consecutive_six_should_return_number_as_int() throws Exception{
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(42, stringCalculator.add("1,2,3,6,6,6,4,5,6"));
     }
+    	//Three consecutive sixes
+    
 }	
